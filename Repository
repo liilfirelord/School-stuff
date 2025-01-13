@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Prompting for an integer
+            System.out.print("Please enter an integer: ");
+            int intValue = Integer.parseInt(scanner.nextLine());
+            System.out.println("Thank you for inputting the int. I read " + intValue + ".");
+
+            // Prompting for a float
+            System.out.print("Please enter a float: ");
+            float floatValue = Float.parseFloat(scanner.nextLine());
+            System.out.println("Thank you for inputting the float. I read " + floatValue + ".");
+
+            // Prompting for a line of text
+            System.out.print("Please enter a line of text: ");
+            String lineValue = scanner.nextLine();
+            System.out.println("Thank you for inputting the line. I read " + lineValue + ".");
+
+        } catch (NumberFormatException e) {
+            System.out.println("Input error: " + e.getMessage());
+        }
+    }
+}
