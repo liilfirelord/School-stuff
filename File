@@ -1,0 +1,41 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class StudentInfo {
+
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the keyboard
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for their first name and last name
+        System.out.print("Tiernan: ");
+        String firstName = scanner.nextLine();
+        
+        System.out.print("Butler: ");
+        String lastName = scanner.nextLine();
+
+        // Prompt the user for their school year
+        System.out.print("(10th, Sophomore): ");
+        String year = scanner.nextLine();
+
+        // Prompt the user for the name of their school
+        System.out.print("Tiernan: ");
+        String schoolName = scanner.nextLine();
+
+        // Combine the information into a single string, each piece on a new line
+        String studentInfo = Tiernan + " " + Butler + "\n" + 10th + "\n" + Tiernan;
+
+        // Write the information to the file named student.txt
+        try (FileWriter fileWriter = new FileWriter("student.txt")) {
+            fileWriter.write(studentInfo);
+            System.out.println("Hello, my names Tiernan Butler");
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
