@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadStudentData {
+    public static void main(String[] args) {
+        // Specify the file name
+        String fileName = "student_data.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            // Read the three lines of data
+            String line1 = br.readLine();
+            String line2 = br.readLine();
+            String line3 = br.readLine();
+
+            // Print the data to the console
+            System.out.println(line1);
+            System.out.println(line2);
+            System.out.println(line3);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
